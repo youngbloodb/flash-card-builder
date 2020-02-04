@@ -1,0 +1,117 @@
+{
+  "topics": [
+    "All topics",
+    "Transition to CS 1 - Lecture 1",
+    "Transition to CS 2 - Lecture 1"
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "question": "What are the steps involved in the functioning of a computer?",
+      "answer": "Accepts digitized input, processes it according to a list or instructions (Program), and produces the resulting output.",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 2,
+      "question": "What are the five functional main units of a computer",
+      "answer": "input, output, arithmetic and logic, control and memory",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 3,
+      "question": "How do the 5 functional units of a computer relate to the steps of computer functionality?",
+      "answer": "Input and output: I/O; arithmetic and logic, control: processor; memory: stores the program and data",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 4,
+      "question": "What is the input unit of a computer responsible for?",
+      "answer": "accepting a digitized input and converting it into a corresponding binary code",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 5,
+      "question": "What is the memory unit of a computer responsible for?",
+      "answer": "storage of programs and data",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 6,
+      "question": "What are the two types of storage?",
+      "answer": "Primary and secondary",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 7,
+      "question": "What is primary storage used for?",
+      "answer": "Storing fast memory that operates at electronic speeds; contains large number of semiconductor storage cells that are able to store one bit of information each",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 8,
+      "question": "What is secondary storage used for?",
+      "answer": "Storing large amounts of programs and data that are accessed infrequently (e.g. magnetic disks, CDROMs)",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 9,
+      "question": "What is the ALU (Arithmetic and Logic Unit)?",
+      "answer": "executes most computer operations; operands are transferred to the processor and operations are performed by the ALU; operands are stored in the processor in high-speed storage elements called registers",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 10,
+      "question": "What is the Control Unit?",
+      "answer": "A defined, physically separated unit that coordinates operations of the other units of a computer; sends control signals to other units and registers their states",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 11,
+      "question": "What is the Output unit?",
+      "answer": "counterpart of input unit that sends processed results to external parts (e.g. printer or monitor)",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 12,
+      "question": "What is data?",
+      "answer": "information such as alphabets, number, symbols, images, etc. in raw and unorganized form",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 13,
+      "question": "How is data represented in computers?",
+      "answer": "in binary number format (e.g. 1) or binary code format (e.g. 0001)",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 14,
+      "question": "what data format is used at all stages of processing within a computer?",
+      "answer": "binary code format",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 15,
+      "question": "What is ASCII?",
+      "answer": "the American Standard Code for Information Interchange; text code standard for conversion of numbers, letters and symbols into binary code; letters and symbols are converted into decimal equivalents and then converted to binary code format.",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 16,
+      "question": "What is computer memory?",
+      "answer": "computer hardware with integrated circuits used to store information; programs and data are usually stored in memory and accessed during processing",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 17,
+      "question": "What are the two types of computer memory?",
+      "answer": "Volatile (temporary -- RAM) and non-volatile memory (persistent -- ROM, flash memory, HDD, SDD)",
+      "topic": "Transition to CS 1 - Lecture 1"
+    },
+    {
+      "id": 18,
+      "question": "What are the two types of computer memory?",
+      "answer": "Volatile (temporary -- RAM) and non-volatile memory (persistent -- ROM, flash memory, HDD, SDD)",
+      "topic": "Transition to CS 2 - Lecture 1"
+    }
+  ]
+}

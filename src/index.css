@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay--disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay__form {
+  padding: 20px;
+  background-color: lightgrey;
+}
+
+.overlay__button {
+  padding: 5px;
+  width: 100px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.newTpcInput {
+  width: 400px;
+  display: block;
+  margin-bottom: 10px;
+}

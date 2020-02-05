@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import NewTopicForm from './NewTopicForm';
+import Cards from './Cards';
 const electron = window.require('electron');
 const fs = electron.remote.require('fs');
-const ipcRenderer = electron.ipcRenderer;
+//const ipcRenderer = electron.ipcRenderer;
 
 function App() {
   //initial data import
@@ -13,6 +14,7 @@ function App() {
   const [userTopics, setUserTopics] = useState(topics);
   const [currentTopic, setCurrentTopic] = useState(topics[0]);
   const [activeForm, setActiveForm] = useState('');
+  const [topicsChanged, setTpcsChanged] = useState(false);
 
   //form methods
   const formCallback = props => {
@@ -48,12 +50,19 @@ function App() {
     setActiveForm('');
     if (userTopics.indexOf(newValue) === -1) {
       setUserTopics(userTopics.concat([newValue]));
+      setTpcsChanged(true);
     }
   };
 
   //file saving methods
-  const saveChanges = () => {
+  const saveTpcChanges = () => {
     const newData = JSON.stringify({ topics: userTopics, cards }, null, 2);
+    fs.writeFileSync('./data/QnA.json', newData);
+    setTpcsChanged(false);
+  };
+
+  const saveCardChanges = newCards => {
+    const newData = JSON.stringify({ topics, cards: newCards }, null, 2);
     fs.writeFileSync('./data/QnA.json', newData);
   };
 
@@ -64,7 +73,7 @@ function App() {
         parentCallback={formCallback}
       />
       <h1>Flash Card Builder</h1>
-      <h2>Select a topic from the list below:</h2>
+      <h2>Filter by topic below:</h2>
       <select className='topicsSelect' onChange={evt => topicChange(evt)}>
         {getTopics()}
       </select>
@@ -74,8 +83,15 @@ function App() {
         value='Add Topic'
         onClick={() => openForm('New Topic')}
       ></input>
-      <br></br>
-      <button onClick={saveChanges}>Save Changes</button>
+      <button onClick={saveTpcChanges} disabled={topicsChanged === false}>
+        Save Changes
+      </button>
+      <Cards
+        topics={topics}
+        currentTopic={currentTopic}
+        cardsArray={cards}
+        parentCallback={saveCardChanges}
+      />
     </div>
   );
 }

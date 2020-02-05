@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const Cards = props => {
-  const { topics, currentTopic, cardsArray, parentCallback } = props;
+  const { topics, currentTopic, cardsArray, parentCallback, topRef } = props;
   const [cards, setCards] = useState([...cardsArray]);
-
-  useEffect(() => {
-    console.log('cards: ', cards);
-  }, [cards]);
+  const [cardAdded, setCardAdded] = useState(false);
 
   const filteredCards =
     currentTopic === 'All topics'
@@ -58,6 +55,12 @@ const Cards = props => {
           className='card'
           onSubmit={submitCardChanges}
         >
+          <button
+            className='card__deleteBtn'
+            onClick={() => deleteCard(card.id)}
+          >
+            X
+          </button>
           <h3>{`Card # ${card.id}`}</h3>
           <label>Topic:</label>
           <br />
@@ -117,7 +120,51 @@ const Cards = props => {
     });
   };
 
-  return <>{getCardInputs()}</>;
+  const addCard = () => {
+    let tempCards = [...cards];
+    const newCard = {
+      id: cards.length + 1,
+      question: 'Insert question here',
+      answer: 'Insert answer here',
+      topic: 'All topics'
+    };
+    tempCards.push(newCard);
+    setCards(tempCards);
+    setCardAdded(true);
+  };
+
+  const deleteCard = cardID => {
+    console.log('cardID: ', cardID);
+  };
+
+  //scroll to effects
+  const footerRef = React.createRef();
+
+  useEffect(() => {
+    if (cardAdded) {
+      scrollToRef(footerRef);
+      setCardAdded(false);
+    }
+  }, [cardAdded]);
+
+  const scrollToRef = ref => {
+    ref.current.scrollIntoView({
+      behavior: 'auto',
+      block: 'start'
+    });
+  };
+
+  return (
+    <>
+      <button onClick={addCard}>Add Card</button>
+      {getCardInputs()}
+      <footer ref={footerRef}>
+        {cards.length > 3 ? (
+          <button onClick={() => scrollToRef(topRef)}>Return to Top</button>
+        ) : null}
+      </footer>
+    </>
+  );
 };
 
 export default Cards;

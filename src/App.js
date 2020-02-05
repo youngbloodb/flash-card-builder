@@ -66,13 +66,16 @@ function App() {
     fs.writeFileSync('./data/QnA.json', newData);
   };
 
+  //side effects
+  const topRef = React.createRef();
+
   return (
     <div className='App'>
       <NewTopicForm
         isActiveForm={activeForm === 'New Topic'}
         parentCallback={formCallback}
       />
-      <h1>Flash Card Builder</h1>
+      <h1 ref={topRef}>Flash Card Builder</h1>
       <h2>Filter by topic below:</h2>
       <select className='topicsSelect' onChange={evt => topicChange(evt)}>
         {getTopics()}
@@ -86,11 +89,13 @@ function App() {
       <button onClick={saveTpcChanges} disabled={topicsChanged === false}>
         Save Changes
       </button>
+      <br />
       <Cards
         topics={topics}
         currentTopic={currentTopic}
         cardsArray={cards}
         parentCallback={saveCardChanges}
+        topRef={topRef}
       />
     </div>
   );

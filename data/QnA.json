@@ -108,115 +108,115 @@
       "topic": "Computer Architecture - Part 1"
     },
     {
-      "id": 19,
+      "id": 18,
       "question": "What is volatile memory?",
       "answer": "Computer memory requiring power to maintain stored information; it is primary storage in computers and an example is RAM (Random Access Memory).",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 20,
+      "id": 19,
       "question": "What is non-volatile memory?",
       "answer": "Computer memory that can maintain stored information even when the power is interrupted / off.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 21,
+      "id": 20,
       "question": "What are the two categories of non-volatile memory?",
       "answer": "Electrically addressed systems--ROM (Read Only Memory and flash memory); Mechanically addressed systems--hard disks, magnetic tape.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 22,
+      "id": 21,
       "question": "What is RAM also known as?",
       "answer": "Read and Write Memory.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 23,
+      "id": 22,
       "question": "What are the two types of RAM?",
       "answer": "Static and Dynamic.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 24,
+      "id": 23,
       "question": "What is Static RAM?",
       "answer": "Random access memory that uses flip-flop to store each bit of data; typically used in CPU cache.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 25,
+      "id": 24,
       "question": "What is Dynamic RAM?",
       "answer": "Random access memory that uses capacitors within an integrated circuit to store each bit of data; typically used in computer’s main memory.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 26,
+      "id": 25,
       "question": "What are the three classifications of ROM?",
       "answer": "PROM, EPROM and EEPROM",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 27,
+      "id": 26,
       "question": "What is PROM?",
       "answer": "Programmable Read Only Memory. Type of ROM that is programmed via PROM programmer and can only be programmed once.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 28,
+      "id": 27,
       "question": "What is EPROM?",
       "answer": "Erasable Programmable Read Only Memory. Type of ROM where data can be erased with UV light and reprogrammed. Can only endure 1000 erasing / reprogramming cycles.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 29,
+      "id": 28,
       "question": "What is EEPROM?",
       "answer": "Electrically Erasable Programmable Read Only Memory. Type of ROM with similar semiconductor structure to EPROM and can be electrically erased and reprogrammed.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 30,
+      "id": 29,
       "question": "What is Flash Memory?",
       "answer": "An Electronically non-volatile memory that can be electrically erased and reprogrammed--modern version of EEPROM with faster erasure / rewrites; USB drives and SSDs (Solid State Drives) are a category of flash memory.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 31,
+      "id": 30,
       "question": "What is Cache Memory?",
       "answer": "Type of memory used to speed up and synchronize with CPU and acts as buffer between RAM and CPU. It holds frequently requested data and instructions from the main memory so that it is immediately available to the CPU.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 32,
+      "id": 31,
       "question": "What is a Cache Hit and Cache Miss?",
       "answer": "When a processor wants to read a location in main memory it first checks for a corresponding entry in cache memory. When the processor finds the memory location in cache, it is a Cache Hit; when the processor does not find one, it is a Cache Miss--where the cache allocates a new entry and copies data from main memory.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 33,
+      "id": 32,
       "question": "What is the Hit Ratio?",
       "answer": "Ratio used to measure the performance of cache memory. Number of cache hits / total accesses",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 34,
+      "id": 33,
       "question": "What are the two approaches to writing to cache memory?",
       "answer": "Write-through approach--write operation is done synchronously to both cache and main memory; Write-back approach--write operation is done only to cache and write to main memory is postponed until modified content is to be replaced by another cache block.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 35,
+      "id": 34,
       "question": "What are the two approaches to write miss (cache miss during write operation)?",
       "answer": "Write allocate--cache memory makes room for the data in a write miss and loads data; No-write allocate--data is not loaded into cache in write miss and is written into main memory.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 36,
+      "id": 35,
       "question": "What are the two units of the CPU (Central Processing Unit)?",
       "answer": "Arithmetic and Logic Unit; Control Unit.",
       "topic": "Computer Architecture - Part 2"
     },
     {
-      "id": 37,
+      "id": 36,
       "question": "How is the ALU (Arithmetic and Logic Unit) designed to operate in the CPU?",
       "answer": "Designed to be powerful enough to handle some complex operations, but not so powerful that when it performs a more complex operation that it consumes more energy and dissipates heat.",
       "topic": "Computer Architecture - Part 2"

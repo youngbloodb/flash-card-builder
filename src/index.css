@@ -64,3 +64,15 @@ html {
 .card__button {
   margin-right: 10px;
 }
+
+.card__deleteBtn {
+  position: absolute;
+  margin-left: 464px;
+  margin-top: -11px;
+  background: firebrick;
+  color: white;
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}

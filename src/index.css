@@ -15,7 +15,7 @@ html {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
@@ -45,6 +45,39 @@ html {
   width: 400px;
   display: block;
   margin-bottom: 10px;
+}
+
+.appName {
+  text-align: center;
+}
+
+.main {
+  display: flex;
+}
+
+.sideNav {
+  width: 300px;
+  min-height: 100vh;
+  background-color: grey;
+}
+
+.sideNav ul {
+  padding-left: 10px;
+}
+
+.sideNav__topic,
+.sideNav__card {
+  list-style-type: none;
+  padding: 4px 0 4px 4px;
+  margin-top: 5px;
+}
+
+.sideNav__card {
+  cursor: pointer;
+}
+
+.sideNav__currentCard {
+  background-color: orange;
 }
 
 .card {

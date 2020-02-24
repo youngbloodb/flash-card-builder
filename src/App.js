@@ -13,6 +13,7 @@ function App() {
   //state hooks
   const [userTopics, setUserTopics] = useState(topics);
   const [currentTopic, setCurrentTopic] = useState(topics[0]);
+  const [currentCardIdx, setCurrentCardIdx] = useState(0);
   const [activeForm, setActiveForm] = useState('');
   const [topicsChanged, setTpcsChanged] = useState(false);
 
@@ -66,8 +67,47 @@ function App() {
     fs.writeFileSync('./data/QnA.json', newData);
   };
 
+  //side nav methods
+  const getSideNavTopics = () => {
+    return userTopics.map((topic, idx) =>
+      idx > 0 ? (
+        <li key={`tpc_${idx}`} className='sideNav__topic'>
+          <span className='sideNav__tpcToggle'>&nbsp;</span>
+          {topic}
+          <ul>{getSideNavCards(topic)}</ul>
+        </li>
+      ) : null
+    );
+  };
+
+  const getSideNavCards = topic => {
+    return cards.map((card, idx) =>
+      card.topic === topic ? (
+        <li
+          key={`c_${card.id}`}
+          className={`sideNav__card${
+            idx === currentCardIdx ? ' sideNav__currentCard' : ''
+          }`}
+          onClick={() => setCurrentCardIdx(idx)}
+        >
+          {`Card ${card.id}`}
+        </li>
+      ) : null
+    );
+  };
+
   //side effects
   const topRef = React.createRef();
+
+  /*
+  <Cards
+            topics={topics}
+            currentTopic={currentTopic}
+            cardsArray={cards}
+            parentCallback={saveCardChanges}
+            topRef={topRef}
+          />
+  */
 
   return (
     <div className='App'>
@@ -75,28 +115,37 @@ function App() {
         isActiveForm={activeForm === 'New Topic'}
         parentCallback={formCallback}
       />
-      <h1 ref={topRef}>Flash Card Builder</h1>
-      <h2>Filter by topic below:</h2>
-      <select className='topicsSelect' onChange={evt => topicChange(evt)}>
-        {getTopics()}
-      </select>
-      <input
-        type='button'
-        className='addTopicsBtn'
-        value='Add Topic'
-        onClick={() => openForm('New Topic')}
-      ></input>
-      <button onClick={saveTpcChanges} disabled={topicsChanged === false}>
-        Save Changes
-      </button>
-      <br />
-      <Cards
-        topics={topics}
-        currentTopic={currentTopic}
-        cardsArray={cards}
-        parentCallback={saveCardChanges}
-        topRef={topRef}
-      />
+      <h1 ref={topRef} className='appName'>
+        Flash Card Builder
+      </h1>
+      <section className='main'>
+        <nav className='sideNav'>
+          <select
+            id='topicsSelect'
+            className='topicsSelect'
+            onChange={evt => topicChange(evt)}
+          >
+            {getTopics()}
+          </select>
+          <button
+            className='sideNav__button'
+            onClick={() => openForm('New Topic')}
+          >
+            Add Topic
+          </button>
+          <button
+            className='sideNav__button'
+            onClick={saveTpcChanges}
+            disabled={topicsChanged === false}
+          >
+            Save Changes
+          </button>
+          <div className='sideNav__cardsList'>
+            <ul>{getSideNavTopics()}</ul>
+          </div>
+        </nav>
+        <article className='content'></article>
+      </section>
     </div>
   );
 }

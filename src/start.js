@@ -23,7 +23,7 @@ function createWindow() {
   );
 
   if (isDev) {
-    mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools({ mode: 'undocked' });
   }
 
   mainWindow.on('closed', () => {

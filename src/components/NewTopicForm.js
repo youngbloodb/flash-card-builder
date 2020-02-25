@@ -1,8 +1,12 @@
 import React from 'react';
 import useInputForm from './CustomHooks';
 
+import { useStore } from '../store';
+
 const NewTopicForm = props => {
-  const { isActiveForm, parentCallback } = props;
+  const [{ activeForm }, dispatch] = useStore();
+
+  const { parentCallback } = props;
 
   const sendNewTopic = () => {
     if (inputs.newTopic !== undefined && inputs.newTopic !== '') {
@@ -19,7 +23,11 @@ const NewTopicForm = props => {
   );
 
   return (
-    <div className={isActiveForm ? 'overlay' : 'overlay overlay--disabled'}>
+    <div
+      className={
+        activeForm === 'New Topic' ? 'overlay' : 'overlay overlay--disabled'
+      }
+    >
       <form
         onSubmit={handleSubmit}
         key='newTopicForm'

@@ -12,5 +12,5 @@ export default {
   currentTopicIdx: 0,
   currentCardIdx: 0,
   activeForm: '',
-  topicsChanged: false
+  topicsChanged: false,
 };

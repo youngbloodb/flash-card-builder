@@ -1,16 +1,31 @@
 import * as types from './types';
 
-export const addTopic = topic => ({
+export const addTopic = (topic) => ({
   type: types.ADD_TOPIC,
-  payload: { topic }
+  payload: { topic },
 });
 
-export const removeTopic = topic => ({
+export const removeTopic = (topic) => ({
   type: types.REMOVE_TOPIC,
-  payload: { topic }
+  payload: { topic },
 });
 
-export const filterTopic = filter => ({
+export const filterTopic = (filter) => ({
   type: types.FILTER_TOPIC,
-  payload: { filter }
+  payload: { filter },
+});
+
+export const setTpcsChanged = (changed) => ({
+  type: types.SET_TPCS_CHANGED,
+  payload: { changed },
+});
+
+export const setCurrentCard = (idx) => ({
+  type: types.SET_CURRENT_CARD,
+  payload: { idx },
+});
+
+export const setActiveForm = (formName) => ({
+  type: types.SET_ACTIVE_FORM,
+  payload: { formName },
 });
